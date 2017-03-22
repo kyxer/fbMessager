@@ -7,23 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7965564B1E82D4250047A7B6 /* Message+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796556471E82D4250047A7B6 /* Message+CoreDataClass.swift */; };
+		7965564C1E82D4250047A7B6 /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796556481E82D4250047A7B6 /* Message+CoreDataProperties.swift */; };
+		7965564D1E82D4250047A7B6 /* Friend+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796556491E82D4250047A7B6 /* Friend+CoreDataClass.swift */; };
+		7965564E1E82D4250047A7B6 /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7965564A1E82D4250047A7B6 /* Friend+CoreDataProperties.swift */; };
 		798DE9731E81B90F00441F12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798DE9721E81B90F00441F12 /* AppDelegate.swift */; };
-		798DE9751E81B90F00441F12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798DE9741E81B90F00441F12 /* ViewController.swift */; };
-		798DE9781E81B91000441F12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 798DE9761E81B91000441F12 /* Main.storyboard */; };
+		798DE9751E81B90F00441F12 /* FriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798DE9741E81B90F00441F12 /* FriendsController.swift */; };
 		798DE97B1E81B91000441F12 /* fbMessager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 798DE9791E81B91000441F12 /* fbMessager.xcdatamodeld */; };
 		798DE97D1E81B91000441F12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 798DE97C1E81B91000441F12 /* Assets.xcassets */; };
 		798DE9801E81B91000441F12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 798DE97E1E81B91000441F12 /* LaunchScreen.storyboard */; };
+		798DE9881E81CFE100441F12 /* FriendsControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798DE9871E81CFE100441F12 /* FriendsControllerHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		796556471E82D4250047A7B6 /* Message+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataClass.swift"; sourceTree = "<group>"; };
+		796556481E82D4250047A7B6 /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		796556491E82D4250047A7B6 /* Friend+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7965564A1E82D4250047A7B6 /* Friend+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		798DE96F1E81B90F00441F12 /* fbMessager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fbMessager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		798DE9721E81B90F00441F12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		798DE9741E81B90F00441F12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		798DE9771E81B91000441F12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		798DE9741E81B90F00441F12 /* FriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsController.swift; sourceTree = "<group>"; };
 		798DE97A1E81B91000441F12 /* fbMessager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = fbMessager.xcdatamodel; sourceTree = "<group>"; };
 		798DE97C1E81B91000441F12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		798DE97F1E81B91000441F12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		798DE9811E81B91000441F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		798DE9871E81CFE100441F12 /* FriendsControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsControllerHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +65,16 @@
 			isa = PBXGroup;
 			children = (
 				798DE9721E81B90F00441F12 /* AppDelegate.swift */,
-				798DE9741E81B90F00441F12 /* ViewController.swift */,
-				798DE9761E81B91000441F12 /* Main.storyboard */,
+				798DE9741E81B90F00441F12 /* FriendsController.swift */,
 				798DE97C1E81B91000441F12 /* Assets.xcassets */,
 				798DE97E1E81B91000441F12 /* LaunchScreen.storyboard */,
 				798DE9811E81B91000441F12 /* Info.plist */,
 				798DE9791E81B91000441F12 /* fbMessager.xcdatamodeld */,
+				798DE9871E81CFE100441F12 /* FriendsControllerHelper.swift */,
+				796556471E82D4250047A7B6 /* Message+CoreDataClass.swift */,
+				796556481E82D4250047A7B6 /* Message+CoreDataProperties.swift */,
+				796556491E82D4250047A7B6 /* Friend+CoreDataClass.swift */,
+				7965564A1E82D4250047A7B6 /* Friend+CoreDataProperties.swift */,
 			);
 			path = fbMessager;
 			sourceTree = "<group>";
@@ -129,7 +141,6 @@
 			files = (
 				798DE9801E81B91000441F12 /* LaunchScreen.storyboard in Resources */,
 				798DE97D1E81B91000441F12 /* Assets.xcassets in Resources */,
-				798DE9781E81B91000441F12 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,23 +151,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				798DE9751E81B90F00441F12 /* ViewController.swift in Sources */,
+				798DE9751E81B90F00441F12 /* FriendsController.swift in Sources */,
 				798DE9731E81B90F00441F12 /* AppDelegate.swift in Sources */,
+				7965564C1E82D4250047A7B6 /* Message+CoreDataProperties.swift in Sources */,
 				798DE97B1E81B91000441F12 /* fbMessager.xcdatamodeld in Sources */,
+				798DE9881E81CFE100441F12 /* FriendsControllerHelper.swift in Sources */,
+				7965564E1E82D4250047A7B6 /* Friend+CoreDataProperties.swift in Sources */,
+				7965564D1E82D4250047A7B6 /* Friend+CoreDataClass.swift in Sources */,
+				7965564B1E82D4250047A7B6 /* Message+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		798DE9761E81B91000441F12 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				798DE9771E81B91000441F12 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		798DE97E1E81B91000441F12 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -271,6 +279,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = gg.fbMessager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -284,6 +293,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = gg.fbMessager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -306,6 +316,7 @@
 				798DE9861E81B91000441F12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
