@@ -26,6 +26,15 @@ class BaseCell:UICollectionViewCell {
 
 class MessageCell: BaseCell {
     
+    override var isHighlighted: Bool {
+        didSet {
+            backgroundColor = isHighlighted ? UIColor.init(red: 0, green: 134/255, blue: 249/255, alpha: 1) : UIColor.white
+            nameLabel.textColor = isHighlighted ? UIColor.white : UIColor.black
+            timeLabel.textColor = isHighlighted ? UIColor.white : UIColor.black
+            messageLabel.textColor = isHighlighted ? UIColor.white : UIColor.black
+        }
+    }
+    
     var message:Message = Message() {
         didSet {
             nameLabel.text = message.friend?.name
@@ -34,7 +43,17 @@ class MessageCell: BaseCell {
             hasReadImageView.image = UIImage(named: (message.friend?.profileImageName)!)
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "h:mm a"
-            timeLabel.text = dateFormatter.string(from: message.date as! Date)
+            let date = message.date as! Date
+            let elapsedTimeInSeconds = Date().timeIntervalSince(date)
+            let secondInDays:TimeInterval = 60 * 60 * 24
+            
+            if elapsedTimeInSeconds > secondInDays * 7 {
+                dateFormatter.dateFormat = "MM/dd/yy"
+            } else if elapsedTimeInSeconds > secondInDays {
+                dateFormatter.dateFormat = "EEE"
+            }
+            
+            timeLabel.text = dateFormatter.string(from: date)
         }
     
     }

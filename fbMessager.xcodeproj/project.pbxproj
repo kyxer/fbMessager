@@ -18,6 +18,7 @@
 		798DE9801E81B91000441F12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 798DE97E1E81B91000441F12 /* LaunchScreen.storyboard */; };
 		798DE9881E81CFE100441F12 /* FriendsControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798DE9871E81CFE100441F12 /* FriendsControllerHelper.swift */; };
 		79AD1E671E85AEF8007AF5CD /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AD1E661E85AEF8007AF5CD /* ChatLogController.swift */; };
+		79AD1E691E85B7A1007AF5CD /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AD1E681E85B7A1007AF5CD /* CustomTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		798DE9811E81B91000441F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		798DE9871E81CFE100441F12 /* FriendsControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsControllerHelper.swift; sourceTree = "<group>"; };
 		79AD1E661E85AEF8007AF5CD /* ChatLogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
+		79AD1E681E85B7A1007AF5CD /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				796556481E82D4250047A7B6 /* Message+CoreDataProperties.swift */,
 				796556491E82D4250047A7B6 /* Friend+CoreDataClass.swift */,
 				7965564A1E82D4250047A7B6 /* Friend+CoreDataProperties.swift */,
+				79AD1E681E85B7A1007AF5CD /* CustomTabBarController.swift */,
 			);
 			path = fbMessager;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			files = (
 				79AD1E671E85AEF8007AF5CD /* ChatLogController.swift in Sources */,
 				798DE9751E81B90F00441F12 /* FriendsController.swift in Sources */,
+				79AD1E691E85B7A1007AF5CD /* CustomTabBarController.swift in Sources */,
 				798DE9731E81B90F00441F12 /* AppDelegate.swift in Sources */,
 				7965564C1E82D4250047A7B6 /* Message+CoreDataProperties.swift in Sources */,
 				798DE97B1E81B91000441F12 /* fbMessager.xcdatamodeld in Sources */,

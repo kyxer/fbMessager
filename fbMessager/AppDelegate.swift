@@ -20,10 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        let layout = UICollectionViewFlowLayout()
-        let controller = FriendsController(collectionViewLayout: layout)
         
-        window?.rootViewController = UINavigationController(rootViewController: controller)
+        window?.rootViewController = CustomTabBarController()
         
         // Override point for customization after application launch.
         return true
