@@ -54,8 +54,8 @@ extension FriendsController {
             steve.profileImageName = "steve"
             
             createMessageWithText(text: "Good morning...", friend: steve, minutesAgo: 2, context: context)
-            createMessageWithText(text: "Hello, how are you?", friend: steve, minutesAgo: 1, context: context)
-            createMessageWithText(text: "Are you interested in buying an Apple device?", friend: steve, minutesAgo: 0, context: context)
+            createMessageWithText(text: "Hello, how are you? Hope you are having good morning", friend: steve, minutesAgo: 1, context: context)
+            createMessageWithText(text: "Are you interested in buying an Apple device? We have wide variety that will suit your needs. Please Make your purchase.", friend: steve, minutesAgo: 0, context: context)
             
             let donald = NSEntityDescription.insertNewObject(forEntityName: "Friend", into: context) as! Friend
             donald.name = "Donal Thrump"
