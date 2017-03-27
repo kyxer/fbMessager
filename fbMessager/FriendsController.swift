@@ -193,6 +193,7 @@ class FriendsController: UICollectionViewController, UICollectionViewDelegateFlo
         
         let controller = ChatLogController(collectionViewLayout: UICollectionViewFlowLayout())
         controller.friend = messages[indexPath.row].friend
+        controller.hidesBottomBarWhenPushed = true
         navigationController?.show(controller, sender: nil)
         
     }

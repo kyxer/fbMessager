@@ -23,10 +23,107 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
     }
     var messages:[Message] = []
     let cellIdentifier = "cellIdentifier"
+    
+    let messageInputContainerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let inputTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Enter message..."
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    let sendButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Send", for: .normal)
+        let titleColor = UIColor(red: 0, green: 137/255, blue: 249/255, alpha: 1)
+        button.setTitleColor(titleColor, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    var bottomConstraint: NSLayoutConstraint?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView?.alwaysBounceVertical = true
         collectionView?.backgroundColor = .white
         collectionView?.register(ChatLogMessageCell.self, forCellWithReuseIdentifier: cellIdentifier)
+        view.addSubview(messageInputContainerView)
+        
+        bottomConstraint = messageInputContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        bottomConstraint?.isActive = true
+        messageInputContainerView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        messageInputContainerView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        messageInputContainerView.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        collectionView?.translatesAutoresizingMaskIntoConstraints = false
+        collectionView?.topAnchor.constraint(equalTo: view.topAnchor, constant:0).isActive = true
+        collectionView?.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        collectionView?.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        collectionView?.bottomAnchor.constraint(equalTo: messageInputContainerView.topAnchor).isActive = true
+        
+        setupInputComponents()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillShow, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    func handleKeyboardNotification(notification: NSNotification) {
+        
+        if let userInfo = notification.userInfo {
+            
+            let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
+            
+            let isKeyboardShowing = notification.name == .UIKeyboardWillShow
+            
+            bottomConstraint?.constant = isKeyboardShowing ? -keyboardFrame!.height : 0
+            
+            UIView.animate(withDuration: 0, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                
+                self.view.layoutIfNeeded()
+                
+            }, completion: { (completed) in
+                
+                if isKeyboardShowing {
+                    let indexPath = IndexPath(item: self.messages.count - 1, section: 0)
+                    self.collectionView?.scrollToItem(at: indexPath, at: .bottom, animated: true)
+                }
+                
+            })
+        }
+    }
+    
+    private func setupInputComponents() {
+        let topBorderView = UIView()
+        topBorderView.backgroundColor = UIColor(white: 0.5, alpha: 0.5)
+        topBorderView.translatesAutoresizingMaskIntoConstraints = false
+        
+        messageInputContainerView.addSubview(inputTextField)
+        messageInputContainerView.addSubview(sendButton)
+        messageInputContainerView.addSubview(topBorderView)
+        
+        inputTextField.bottomAnchor.constraint(equalTo: messageInputContainerView.bottomAnchor).isActive = true
+        inputTextField.topAnchor.constraint(equalTo: topBorderView.bottomAnchor).isActive = true
+        inputTextField.leftAnchor.constraint(equalTo: messageInputContainerView.leftAnchor, constant:8).isActive = true
+        inputTextField.rightAnchor.constraint(equalTo: sendButton.leftAnchor).isActive = true
+        
+        sendButton.bottomAnchor.constraint(equalTo: messageInputContainerView.bottomAnchor).isActive = true
+        sendButton.topAnchor.constraint(equalTo: topBorderView.bottomAnchor).isActive = true
+        sendButton.rightAnchor.constraint(equalTo: messageInputContainerView.rightAnchor).isActive = true
+        sendButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        
+        topBorderView.topAnchor.constraint(equalTo: messageInputContainerView.topAnchor).isActive = true
+        topBorderView.leftAnchor.constraint(equalTo: messageInputContainerView.leftAnchor).isActive = true
+        topBorderView.rightAnchor.constraint(equalTo: messageInputContainerView.rightAnchor).isActive = true
+        topBorderView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        
     }
 }
 
@@ -88,6 +185,10 @@ extension ChatLogController {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        inputTextField.endEditing(true)
     }
     
 }
