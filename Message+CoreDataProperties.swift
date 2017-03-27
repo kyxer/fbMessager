@@ -2,7 +2,7 @@
 //  Message+CoreDataProperties.swift
 //  fbMessager
 //
-//  Created by IT-German on 3/22/17.
+//  Created by IT-German on 3/27/17.
 //  Copyright © 2017 german. All rights reserved.
 //
 
@@ -18,6 +18,7 @@ extension Message {
 
     @NSManaged public var date: NSDate?
     @NSManaged public var text: String?
+    @NSManaged public var sender: Bool
     @NSManaged public var friend: Friend?
 
 }
